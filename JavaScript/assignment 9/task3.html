@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 3</title>
+</head>
+<body>
+
+    <h2>Save Your Note</h2>
+
+    <input type="text" id="note" placeholder="Enter your note">
+
+    <button onclick="saveNote()">Save</button>
+
+    <script>
+        let savedNote = localStorage.getItem("note");
+
+        if (savedNote !== null) {
+            document.getElementById("note").value = savedNote;
+        }
+
+        function saveNote() {
+            let text = document.getElementById("note").value;
+
+            localStorage.setItem("note", text);
+
+            alert("Note Saved!");
+        }
+    </script>
+
+</body>
+</html>
